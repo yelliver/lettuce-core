@@ -16,6 +16,7 @@
 package io.lettuce.core.pubsub;
 
 /**
+ * @deprecated Just use RedisPubSubListener (now with default methods)
  * Convenience adapter with an empty implementation of all {@link RedisPubSubListener} callback methods.
  *
  * @param <K> Key type.
@@ -23,6 +24,7 @@ package io.lettuce.core.pubsub;
  *
  * @author Will Glozer
  */
+@Deprecated
 public class RedisPubSubAdapter<K, V> implements RedisPubSubListener<K, V> {
 
     @Override

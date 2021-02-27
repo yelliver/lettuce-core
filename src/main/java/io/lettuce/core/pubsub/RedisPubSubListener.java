@@ -30,7 +30,8 @@ public interface RedisPubSubListener<K, V> {
      * @param channel Channel.
      * @param message Message.
      */
-    void message(K channel, V message);
+    default void message(K channel, V message){
+	}
 
     /**
      * Message received from a pattern subscription.
@@ -39,7 +40,8 @@ public interface RedisPubSubListener<K, V> {
      * @param channel Channel
      * @param message Message
      */
-    void message(K pattern, K channel, V message);
+    default void message(K pattern, K channel, V message){
+	}
 
     /**
      * Subscribed to a channel.
@@ -47,7 +49,8 @@ public interface RedisPubSubListener<K, V> {
      * @param channel Channel
      * @param count Subscription count.
      */
-    void subscribed(K channel, long count);
+    default void subscribed(K channel, long count){
+	}
 
     /**
      * Subscribed to a pattern.
@@ -55,7 +58,8 @@ public interface RedisPubSubListener<K, V> {
      * @param pattern Pattern.
      * @param count Subscription count.
      */
-    void psubscribed(K pattern, long count);
+    default void psubscribed(K pattern, long count){
+	}
 
     /**
      * Unsubscribed from a channel.
@@ -63,7 +67,8 @@ public interface RedisPubSubListener<K, V> {
      * @param channel Channel
      * @param count Subscription count.
      */
-    void unsubscribed(K channel, long count);
+    default void unsubscribed(K channel, long count){
+	}
 
     /**
      * Unsubscribed from a pattern.
@@ -71,6 +76,7 @@ public interface RedisPubSubListener<K, V> {
      * @param pattern Channel
      * @param count Subscription count.
      */
-    void punsubscribed(K pattern, long count);
+    default void punsubscribed(K pattern, long count){
+	}
 
 }
